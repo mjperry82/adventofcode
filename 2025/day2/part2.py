@@ -31,16 +31,15 @@ def check_pattern(num, target_length, invalid_list):
     if len(num) % target_length == 0:
         pattern = num[:target_length]
         result = re.findall(pattern, num)
-        if len(result) == len(num) / target_length and target_length == len(num) / 2:
-            invalid_list.append(int(num))
-            return invalid_list
-                                
+        if len(result) * target_length == len(num):
+            int_num = int(num)
+            if int_num not in invalid_list:
+                invalid_list.append(int_num)                                
         
-    if target_length > 2:
+    if target_length > 1:
         invalid_list = check_pattern(num, target_length-1, invalid_list)
-        return invalid_list
-    else:
-        return invalid_list
+    
+    return invalid_list
 
 def main():
     ranges = load_input(INPUT_FILE_NAME)
@@ -52,7 +51,7 @@ def main():
     for item in invalid_list:
         invalid_sum += item
     
-    print(invalid_list)
+    #print(invalid_list)
     print(invalid_sum)
 
 if __name__ == '__main__':
