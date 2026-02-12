@@ -36,7 +36,7 @@ def check_pattern(num, target_length, invalid_list):
             if int_num not in invalid_list:
                 invalid_list.append(int_num)                                
         
-    if target_length > 2:
+    if target_length > 1:
         invalid_list = check_pattern(num, target_length-1, invalid_list)
     
     return invalid_list
