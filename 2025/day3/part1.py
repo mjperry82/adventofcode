@@ -37,9 +37,6 @@ def find_highest(line):
         if int(the_rest[i]) > max2:
             max2 = int(the_rest[i])
             pos2 = i
-    
-    print(f"line: {line} max: {max} pos: {pos}")
-    print(f"the_rest: {the_rest} max2: {max2} pos2: {pos2}")
 
     return line[pos] + the_rest[pos2]            
 
